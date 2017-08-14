@@ -1,0 +1,25 @@
+﻿@model List<Aplicacao.Models.GitHubApiItem>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div>
+        <div>
+            Nome: @item.full_name
+        </div>
+        <div>
+            Descrição: @item.description
+        </div>
+        <div>
+            Rating: @item.stargazers_count
+        </div>
+        <div>
+            @Html.ActionLink("Ver detalhes", "Detalhes", "Home", new { id = @item.id, owner = @item.owner.login, name = @item.name }, null)
+        </div>
+        <hr />
+    </div>
+}

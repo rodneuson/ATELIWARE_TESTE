@@ -1,0 +1,25 @@
+﻿@model Aplicacao.Models.GitHubApiItem
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<div>
+    <div>
+        Nome: @Model.full_name
+    </div>
+    <div>
+        Descrição: @Model.description
+    </div>
+    <div>
+        Rating: @Model.stargazers_count
+    </div>
+    <div>
+        URL: @Model.clone_url
+    </div>
+    <div>
+        Site: @Model.homepage
+    </div>
+</div>
+
